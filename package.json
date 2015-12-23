@@ -1,0 +1,35 @@
+{
+  "name": "hapi-set-header",
+  "version": "1.0.0",
+  "description": "Set a Hapi response header for all requests",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "NODE_ENV=test istanbul test _mocha -- --check-leaks"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/davidwood/hapi-set-header.git"
+  },
+  "keywords": [
+    "hapi",
+    "header"
+  ],
+  "author": "David Wood <bitprobe@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davidwood/hapi-set-header/issues"
+  },
+  "homepage": "https://github.com/davidwood/hapi-set-header#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "eslint": "^1.10.3",
+    "eslint-config-airbnb": "^2.1.1",
+    "istanbul": "^0.4.1",
+    "mocha": "^2.3.4"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  }
+}
