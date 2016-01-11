@@ -20,20 +20,22 @@ describe('setHeader(server, key, value)', () => {
   });
 
   it('should throw an error if the Hapi server is invalid', () => {
-    [true, false, '', 'test', 123, new Date(), {}, [], null, undefined, /test/i, NOOP].forEach((value) => {
+    const values = [true, false, '', 'test', 123, new Date(), {}, [], null, undefined, /test/i];
+    values.forEach((value) => {
       let error;
       try {
-        setHeader(value, KEY, VALUE);
+        setHeader({ ext: value }, KEY, VALUE);
       } catch (e) {
         error = e;
       }
       assert.strictEqual(error instanceof TypeError, true);
       assert.strictEqual(error.message, 'server.ext is not a function');
     });
-    [true, false, '', 'test', 123, new Date(), {}, [], null, undefined, /test/i].forEach((value) => {
+    values.push(NOOP);
+    values.forEach((value) => {
       let error;
       try {
-        setHeader({ ext: value }, KEY, VALUE);
+        setHeader(value, KEY, VALUE);
       } catch (e) {
         error = e;
       }
