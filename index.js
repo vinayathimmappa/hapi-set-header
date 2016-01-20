@@ -1,11 +1,6 @@
 'use strict';
 
 /**
- * Imports
- */
-const util = require('util');
-
-/**
  * Set a server header
  *
  * @param   {Object}    server      Hapi server
@@ -13,10 +8,10 @@ const util = require('util');
  * @param   {*}         value       Header value
  */
 module.exports = (server, key, value) => {
-  if (!(server && util.isFunction(server.ext))) {
+  if (!(server && typeof server.ext === 'function')) {
     throw new TypeError('server.ext is not a function');
   }
-  if (!(key && util.isString(key))) {
+  if (!(key && typeof key === 'string')) {
     throw new TypeError('Invalid header key');
   }
   server.ext('onPreResponse', (request, reply) => {

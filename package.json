@@ -1,6 +1,6 @@
 {
   "name": "hapi-set-header",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Set a Hapi response header for all requests",
   "main": "index.js",
   "scripts": {
