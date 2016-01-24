@@ -4,7 +4,6 @@
  * Imports
  */
 const assert = require('assert');
-const util = require('util');
 const setHeader = require('../');
 
 /**
@@ -16,7 +15,7 @@ const VALUE = 'TestValue';
 
 describe('setHeader(server, key, value)', () => {
   it('should export a function', () => {
-    assert.strictEqual(util.isFunction(setHeader), true);
+    assert.strictEqual(typeof setHeader === 'function', true);
   });
 
   it('should throw an error if the Hapi server is invalid', () => {
@@ -61,7 +60,7 @@ describe('setHeader(server, key, value)', () => {
     const server = {
       ext(type, method) {
         assert.strictEqual(type, 'onPreResponse');
-        assert.strictEqual(util.isFunction(method), true);
+        assert.strictEqual(typeof method === 'function', true);
       },
     };
     setHeader(server, KEY, VALUE);
