@@ -9,7 +9,7 @@ const setHeader = require('../');
 /**
  * Constants
  */
-const NOOP = () => {};
+const NOOP = () => {}; // eslint-disable-line
 const KEY = 'TestKey';
 const VALUE = 'TestValue';
 

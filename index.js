@@ -15,10 +15,11 @@ module.exports = (server, key, value) => {
     throw new TypeError('Invalid header key');
   }
   server.ext('onPreResponse', (request, reply) => {
+    const response = request.response;
     if (request.response.isBoom) {
-      request.response.output.headers[key] = value;
+      response.output.headers[key] = value;
     } else {
-      request.response.header(key, value);
+      response.header(key, value);
     }
     reply.continue();
   });
