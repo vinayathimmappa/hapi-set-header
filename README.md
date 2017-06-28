@@ -11,7 +11,7 @@ The following example sets the `Server` header to `Test Server`
 
 ```
 const Hapi = require('hapi');
-const setHeader = requre('hapi-set-header');
+const setHeader = require('hapi-set-header');
 const server = new Hapi.Server({});
 setHeader(server, 'Server', 'Test Server');
 ```
